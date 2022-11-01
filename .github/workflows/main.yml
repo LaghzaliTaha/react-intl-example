@@ -23,7 +23,7 @@ jobs:
 
             - name: Deploy to Firebase
               uses: w9jds/firebase-action@master
-              if: endsWith(github.ref, 'develop') == true
+              if: endsWith(github.ref, 'master') == true
               with:
                   args: deploy --only hosting
               env:
