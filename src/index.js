@@ -13,7 +13,8 @@ const data = {
   'en': locale_en
 };
 
-const language = navigator.language.split(/[-_]/)[0];
+let params = (new URL(document.location)).searchParams;
+const language = params.get('lng'); 
 
 ReactDOM.render(
   <IntlProvider locale={language} messages={data[language]}>
